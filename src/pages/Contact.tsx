@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Phone, Mail, Clock, Send, MessageCircle, CheckCircle2, ArrowRight } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, MessageCircle } from 'lucide-react';
 import PageBanner from '../components/PageBanner';
 
 const contactInfo = [
@@ -12,14 +12,23 @@ const contactInfo = [
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
-  const [submitted, setSubmitted] = useState(false);
+ const openWhatsApp = () => {
+  const phoneNumber = "6282181111251"; // Ganti nomor WA di sini
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-    setForm({ name: '', email: '', subject: '', message: '' });
-    setTimeout(() => setSubmitted(false), 5000);
-  };
+  const text = `Halo Admin Cafe Cekwan,
+
+Nama : ${form.name}
+Email : ${form.email}
+Subjek : ${form.subject}
+
+Pesan :
+${form.message}`;
+
+  window.open(
+    `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`,
+    "_blank"
+  );
+};
 
   return (
     <div>
@@ -95,19 +104,7 @@ export default function Contact() {
               <h2 className="text-2xl font-bold text-gray-900 font-serif mb-2">Kirim Pesan</h2>
               <p className="text-gray-400 text-sm mb-7">Isi formulir di bawah dan kami akan menghubungi Anda segera.</p>
 
-              {submitted && (
-                <motion.div
-                  initial={{ opacity: 0, y: -8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="mb-6 p-4 rounded-2xl flex items-center gap-3"
-                  style={{ background: 'rgba(16,185,129,0.08)', border: '1px solid rgba(16,185,129,0.2)' }}
-                >
-                  <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0" />
-                  <p className="text-sm text-emerald-700 font-medium">Pesan berhasil dikirim! Kami akan segera membalas.</p>
-                </motion.div>
-              )}
-
-              <form onSubmit={handleSubmit} className="space-y-5">
+             <form className="space-y-5">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">Nama</label>
@@ -154,20 +151,20 @@ export default function Contact() {
                     placeholder="Tulis pesan Anda..."
                   />
                 </div>
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <button type="submit" className="btn-primary flex-1">
-                    <Send className="w-4 h-4" /> Kirim Pesan
-                  </button>
-                  <a
-                    href="https://wa.me/6281234567890"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-bold text-sm text-white transition-all hover:-translate-y-0.5"
-                    style={{ background: 'linear-gradient(135deg,#22c55e,#16a34a)', boxShadow: '0 4px 20px rgba(34,197,94,0.35)' }}
-                  >
-                    <MessageCircle className="w-4 h-4" /> Chat WhatsApp
-                  </a>
-                </div>
+<div>
+  <button
+    type="button"
+    onClick={openWhatsApp}
+    className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-bold text-sm text-white transition-all hover:-translate-y-0.5"
+    style={{
+      background: "linear-gradient(135deg,#22c55e,#16a34a)",
+      boxShadow: "0 4px 20px rgba(34,197,94,0.35)",
+    }}
+  >
+    <MessageCircle className="w-5 h-5" />
+    Chat WhatsApp
+  </button>
+</div>
               </form>
             </motion.div>
           </div>
