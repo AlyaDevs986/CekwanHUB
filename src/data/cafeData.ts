@@ -1400,18 +1400,14 @@ export const menuItems: MenuItem[] = [
 ];
 
 export const galleryItems: GalleryItem[] = [
-  { id: 1, title: 'Latte Art Spesial', category: 'Minuman', image: '/images/gallery-coffee.jpg' },
-  { id: 2, title: 'Interior Cafe Modern', category: 'Interior Cafe', image: '/images/gallery-interior.jpg' },
-  { id: 3, title: 'Suasana Nongkrong', category: 'Suasana Cafe', image: '/images/gallery-ambience.jpg' },
-  { id: 4, title: 'Cappuccino Klasik', category: 'Minuman', image: '/images/menu-coffee.jpg' },
-  { id: 5, title: 'Dessert Manis', category: 'Makanan', image: '/images/menu-dessert.jpg' },
-  { id: 6, title: 'Nasi Goreng Spesial', category: 'Makanan', image: '/images/menu-food.jpg' },
-  { id: 7, title: 'Matcha Latte', category: 'Minuman', image: '/images/menu-noncoffee.jpg' },
-  { id: 8, title: 'Snack French Fries', category: 'Makanan', image: '/images/menu-snack.jpg' },
-  { id: 9, title: 'Barista di Bekerja', category: 'Suasana Cafe', image: '/images/about-barista.jpg' },
-  { id: 10, title: 'Tampak Depan Cafe', category: 'Interior Cafe', image: '/images/about-exterior.jpg' },
-  { id: 11, title: 'Espresso Corner', category: 'Interior Cafe', image: '/images/gallery-interior.jpg' },
-  { id: 12, title: 'Kopi Pagi', category: 'Minuman', image: '/images/gallery-coffee.jpg' },
+  { id: 1, title: 'Minuman Segar', category: 'Minuman', image: '/images/image1.jpeg' },
+  { id: 2, title: 'Ayam Penyet', category: 'Makanan', image: '/images/image6.jpeg' },
+  { id: 3, title: 'Pisang Goreng Krispi', category: 'Makanan', image: '/images/image7.jpeg' },
+  { id: 4, title: 'Nasi Goreng', category: 'Makanan', image: '/images/image2.jpeg' },
+  { id: 5, title: 'Mie Aceh', category: 'Makanan', image: '/images/image3.jpeg' },
+  { id: 6, title: 'Minuman Segar', category: 'Minuman', image: '/images/image5.jpeg' },
+  { id: 7, title: 'es Teh Manis', category: 'Minuman', image: '/images/image8.jpeg' },
+  { id: 8, title: 'Pisang goreng', category: 'Makanan', image: '/images/image4.jpeg' },
 ];
 
 export const testimonials: Testimonial[] = [

@@ -34,7 +34,7 @@ export interface MenuItem {
 export interface GalleryItem {
   id: number;
   title: string;
-  category: 'Makanan' | 'Minuman' | 'Interior Cafe' | 'Suasana Cafe';
+  category: 'Makanan' | 'Minuman' | 'Interior Cafe';
   image: string;
 }
 
@@ -94,5 +94,4 @@ export const GALLERY_CATEGORIES = [
   'Makanan',
   'Minuman',
   'Interior Cafe',
-  'Suasana Cafe',
 ] as const;
