@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cekwanhub.netlify.app/sitemap.xml
